@@ -41,9 +41,11 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', op
       title.innerHTML = `${movie.title}`;
       text.innerHTML = `${movie.overview} <br><br>⭐⭐⭐<br>${movie.vote_average}`;
       
+      //영화 id alert 창 띄우기
       item.addEventListener("click",() => {
         alert(movie.id);
       })
+
       item.appendChild(poster)
       item.appendChild(title)
       item.appendChild(text)
