@@ -20,14 +20,14 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', op
     console.log(data);
     const results = data.results;
     //  allList=results;
-    const movieList = document.getElementsByClassName('item');
+    const movieList = document.getElementsByClassName('item'); 
 
     results.forEach(movie => {
       // const item = document.getElementsByClassName("movieCard")[0]
       // const title = document.getElementsByClassName("card-title")[0]
       // const text = document.getElementsByClassName("card-text")[0]
       // const poster = document.getElementsByClassName("moviePoster")[0]
-
+ 
       const item = document.createElement('div');
       item.classList.add("movieCard")
       const title = document.createElement('h2');
@@ -51,7 +51,7 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', op
       item.appendChild(text)
 
       const movieListWrap = document.getElementsByClassName("movieListWrap")[0]
-      movieListWrap.appendChild(item)
+      movieListWrap.appendChild(item) //movieListWrap 안에 item 요소들을 넣겠다
 
     });
   })
@@ -59,12 +59,13 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', op
     console.error('오류 발생:', error);
   });
 
-  // search() {
-  //   div.html = "";
-  //   let filterd = allList.filter();
-  //   filterd.forEach()
-  // }
+  
+//검색기능
 
 
- 
 
+//   search() {
+//   div.html = "";
+//   let filterd = allList.filter();
+//   filterd.forEach()
+// }
