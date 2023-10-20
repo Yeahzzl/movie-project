@@ -7,7 +7,9 @@ const options = {
   }
 };
 
-fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
+const allList=[];
+
+fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', options)
   .then(response => {
     if (!response.ok) {
       throw new Error('네트워크 오류');
@@ -17,6 +19,7 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
   .then(data => {
     console.log(data);
     const results = data.results;
+    //  allList=results;
     const movieList = document.getElementsByClassName('item');
 
     results.forEach(movie => {
@@ -38,6 +41,9 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
       title.innerHTML = `${movie.title}`;
       text.innerHTML = `${movie.overview} <br><br>⭐⭐⭐<br>${movie.vote_average}`;
       
+      item.addEventListener("click",() => {
+        alert(movie.id);
+      })
       item.appendChild(poster)
       item.appendChild(title)
       item.appendChild(text)
@@ -50,4 +56,13 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
   .catch(error => {
     console.error('오류 발생:', error);
   });
+
+  // search() {
+  //   div.html = "";
+  //   let filterd = allList.filter();
+  //   filterd.forEach()
+  // }
+
+
+ 
 

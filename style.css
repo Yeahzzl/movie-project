@@ -1,11 +1,12 @@
 body {
-  background-color: white;
+  background-color: #ffffff;
 }
 
 .top {
-  background-color: #FFF2CC;
-  padding: 20px;
-  margin: 0px;
+  background-color: #ffedb7;
+  padding: 10px;
+  margin: 100px;
+  border-radius: 50px;
 } 
 
 #wrap main h1 {
@@ -26,7 +27,7 @@ a {
 }
 
 .searchContainer {
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 #wrap main form input {
   padding: 10px;
@@ -77,16 +78,21 @@ a {
 
 .movieCard:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 .card-title {
   display: flex;
   justify-content: center;
   font-family: gmarketsansmedium;
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
 }
 
+img.moviePoster {
+  border-radius: 10px;
+}
 .card-text {
+  font-size: 14px;
   text-align: center;
   font-family: helvetica;
 }
