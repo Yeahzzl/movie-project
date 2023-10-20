@@ -1,3 +1,86 @@
 body {
-  background-color: #F0B35F;
+  background-color: #FFF2CC;
+}
+
+#wrap main h1 {
+  font-family: gmarketsansmedium;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  margin: 100px auto 40px auto;
+}
+
+a {
+  text-decoration: none;
+  color: #232D3F;
+}
+#wrap main form {
+  display: flex;
+  justify-content: center;
+}
+
+.searchContainer {
+  margin-bottom: 150px;
+}
+#wrap main form input {
+  padding: 10px;
+  width: 400px;
+  height: 20px;
+  background-color: white;
+  border: 3px solid #DFA67B;
+  border-right: none;
+}
+
+#wrap main form button {
+  font-family: gmarketsanslight;
+  color: white;
+  padding: 10px;
+  width: 100px;
+  background-color: #DFA67B;
+  border: none;
+  cursor: pointer;
+}
+
+#wrap main form button:hover {
+  background-color: #F4B183;
+}
+
+.movieListWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 10px;
+  row-gap: 50px;
+}
+
+.movieCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* word-wrap: break-word; */
+  background-color: white;
+  background-clip: border-box;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  width: 20%;
+  padding: 20px;
+  margin: 50px;
+  transform: scale(1);
+  transition: .3s ease-in-out;
+}
+
+.movieCard:hover {
+  transform: scale(1.1);
+}
+.card-title {
+  display: flex;
+  justify-content: center;
+  font-family: gmarketsansmedium;
+  font-size: 30px;
+  text-align: center;
+}
+
+.card-text {
+  text-align: center;
+  font-family: helvetica;
 }
