@@ -76,27 +76,30 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', op
   
         console.log(searchText);
       }
-//
+
       searchForm.addEventListener("submit", searchMovie);
   
-//영화를 찾아오는 함수
+
+//filter를 이용해 input에 해당하는 값만 불러오기(하고싶다.......)
+    /*
+    let allList = [
+      //가져온 영화데이터 리스트를 넣어야 할텐데..?
+    ];
+    */
+    let filtered =  
+    allList.filter(function(movie) {
+      return movie.title === searchInput;
+    });
+    console.log(filtered);
+
+    // filtered.forEach(movie => {
 
 
+//값이 입력되지 않았을때 제목을입력해주세요가 출력되고 그렇지 않으면 검색한 영화 출력....?
+    let searchText = "";
+    if (searchText === "") {
+      console.log("제목을 입력해주세요");
+    } else if (searchText !== null) {
+      console.log("allList")
+    }
 
-//input값 출력하기
-// function printMovie() {
-//   const searchInputValue = 
-//   document.getElementById("inputValue").value;
-//   document.getElementById("result").innerText = searchInputValue;
-//   document.getElementById("inputValue").value="";
-// }
-
-
-
-
-
-//   search() {
-//   div.html = "";
-//   let filterd = allList.filter();
-//   filterd.forEach()
-// }
