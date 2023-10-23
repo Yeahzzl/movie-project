@@ -7,7 +7,8 @@ const options = {
   }
 };
 
-const allList=[];
+//const allList -> let allList // const는 한번 할당되고 나면 재할당할 수 없음
+let allList=[];
 
 fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', options)
   .then(response => {
@@ -19,15 +20,17 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', op
   .then(data => {
     console.log(data);
     const results = data.results;
-    //  allList=results;
+     allList=results;
     const movieList = document.getElementsByClassName('item'); 
 
     results.forEach(movie => {
+  //아래 코드를 넣었더니 영화카드1개만 불러와짐..! -> html에서 불러올 개수만큼 div입력해야했음
       // const item = document.getElementsByClassName("movieCard")[0]
       // const title = document.getElementsByClassName("card-title")[0]
       // const text = document.getElementsByClassName("card-text")[0]
       // const poster = document.getElementsByClassName("moviePoster")[0]
  
+  //새로운 노드 생성하는 코드로 수정 & 클래스명 입히기    
       const item = document.createElement('div');
       item.classList.add("movieCard")
       const title = document.createElement('h2');
@@ -41,11 +44,12 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', op
       title.innerHTML = `${movie.title}`;
       text.innerHTML = `${movie.overview} <br><br>⭐⭐⭐<br>${movie.vote_average}`;
       
-      //영화 id alert 창 띄우기
+  //영화 id alert 창 띄우기...
       item.addEventListener("click",() => {
-        alert(movie.id);
+        alert("영화ID : " + movie.id);
       })
 
+  //item안에 세가지 요소 넣기
       item.appendChild(poster)
       item.appendChild(title)
       item.appendChild(text)
@@ -59,8 +63,35 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', op
     console.error('오류 발생:', error);
   });
 
+
+//input에 검색어를 입력
+  const searchInput = document.querySelector("#inputValue");
+  const searchForm = document.querySelector('#searchForm');
+  // console.log(searchButton);
+
+ // form태그 안에서 -> input에 엔터나, 버튼 클릭을 하면 submit 이벤트가 발생함
+    const searchMovie = (event) => {
+      event.preventDefault()
+      let searchText = searchInput.value;
   
-//검색기능
+        console.log(searchText);
+      }
+//
+      searchForm.addEventListener("submit", searchMovie);
+  
+//영화를 찾아오는 함수
+
+
+
+//input값 출력하기
+// function printMovie() {
+//   const searchInputValue = 
+//   document.getElementById("inputValue").value;
+//   document.getElementById("result").innerText = searchInputValue;
+//   document.getElementById("inputValue").value="";
+// }
+
+
 
 
 

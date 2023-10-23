@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>yeahflix</title>
-  <script src="main.js"></script>
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,9 +16,10 @@
           <a href="/">BEST MOVIE</a>
         </h1>
             <div class="searchContainer">
-                <form>
-                  <input type="text" placeholder="Find Movie!">
-                  <button type="button" id="searchButton">search</button>
+                <form id="searchForm">
+                  <input type="text" id="inputValue" placeholder="Find Movie!">
+                  <div id="result"></div>
+                  <button id="clickButton">search</button>
                 </form>
             </div>
       </section>
@@ -37,4 +38,5 @@
     </div>
 </div>
 </body>
-</htmlㅎ>
+<script src="main.js"></script>
+</html>
