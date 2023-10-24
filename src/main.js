@@ -91,7 +91,7 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1', op
       return movie.title === searchInput;
     });
     console.log(filtered);
-
+    
     // filtered.forEach(movie => {
 
 

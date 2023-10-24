@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>yeahflix</title>
   
+ <!-- 브라우저마다 html태그에 기본적으로 들어가있는 css스타일이 있는데 한번 초기화한 후 작업하면 모든 브라우저마다 동일한 디자인속성을 적용할 수 있음  -->
+  <!-- <link rel="stylesheet" href="reset.css"> -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,6 +18,7 @@
           <a href="/">BEST MOVIE</a>
         </h1>
             <div class="searchContainer">
+              <!-- <form onsubmit="searchMovie(event)"></form> //'onsubmit' event로 엔터, 검색버튼 두가지 다 실행가능 -->
                 <form id="searchForm">
                   <input type="text" id="inputValue" placeholder="Find Movie!">
                   <button id="clickButton">search</button>
