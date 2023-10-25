@@ -13,6 +13,7 @@ const movieList = document.getElementsByClassName("item");
 //const allList -> let allList // const는 한번 할당되고 나면 재할당할 수 없음
 let allList = [];
 
+//fetch 바깥으로 빼서 여러번 적을 필요 없이 함수를 이용해서 재사용 가능
 function renderMovie(results) {
   results.forEach((movie) => {
     //아래 코드를 넣었더니 영화카드1개만 불러와짐..! -> html에서 불러올 개수만큼 div입력해야했음
@@ -80,44 +81,43 @@ const searchMovie = (event) => {
   console.log(searchText);
   console.log(allList);
 
+  //filter 기능을 이용해서 검색어에 맞는 영화만 남기고 지우는 과정
   const filtered = allList.filter((movie) => {
     return (
       movie.title === searchText || movie.title.replace(/ /g, "") === searchText || movie.title.includes(searchText)
     );
   });
-  movieListWrap.innerHTML = "";
-  console.log(filtered);
+  movieListWrap.innerHTML = ""; //영화카드 지우기
+  console.log(filtered); //검색어에 맞게 필터된 영화만 남기기
   renderMovie(filtered);
 };
 
 searchForm.addEventListener("submit", searchMovie);
 
-//filter를 이용해 input에 해당하는 값만 불러오기(하고싶다.......)
 /*
-    let allList = [
-      //가져온 영화데이터 리스트를 넣어야 할텐데..?
-    ];
+//내가 시도했다가 실패한 코드들 어딘가 많이 부족함
+//filter를 이용해 input에 해당하는 값만 불러오기(하고싶다.......)
 
     let filtered =  
     allList.filter(function(movie) {
-      return movie.title === searchInput;
+      return movie.title === searchText;
     });
     console.log(filtered);
-        */
+  
+item.forEach((card) => {
+  const title = card.querySelector(".movie-title").textContent;
+  const searchValue = searchInput;
 
-// item.forEach((card) => {
-//   const title = card.querySelector(".movie-title").textContent;
-//   const searchValue = searchInput;
-
-//   if (title.includes(searchValue)) {
-//     card.style.display = "block";
-//   } else {
-//     card.style.display = "none";
-//   }
-// });
+  if (title.includes(searchValue)) {
+    card.style.display = "block";
+  } else {
+    card.style.display = "none";
+  }
+});
 
 // //값이 입력되지 않았을때 제목을입력해주세요가 출력....?
-// let searchText = "";
-// if (searchText === "") {
-//   alert("제목을 입력해주세요");
-// }
+let searchText = "";
+if (searchText === "") {
+  alert("제목을 입력해주세요");
+}
+*/
