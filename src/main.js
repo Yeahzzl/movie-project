@@ -76,7 +76,7 @@ const searchMovie = (event) => {
   event.preventDefault(); //submit 이벤트를 이용했을때 form 태그가 기본적으로 가지고 있는 새로고침 기능을 작동하지 않게 하는 코드
   let searchText = searchInput.value;
   if (searchText === "") {
-    alert("제목을 입력해주세요");
+    alert("제목을 입력해주세요"); //검색어가 없을때 창 띄우기
   }
   console.log(searchText);
   console.log(allList);
